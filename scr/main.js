@@ -24,16 +24,9 @@ const server = app.listen(PORT, () => {
 const io = new Server(server)
 
 
-
-//const storage = multer.diskStorage({
     destination: (req, file, cb) => { 
-        //cb(null, 'src/public/img') 
-    ////},
     filename: (req, file, cb) => {
-        //cb(null, `${Date.now()}${file.originalname}`) 
-        
-    //}
-//})
+
 
 
 app.use(express.json())
@@ -43,7 +36,6 @@ app.engine('handlebars', engine())
 app.set('view engine', 'handlebars')
 app.set('views', path.resolve(__dirname, './views'))
 
-//const upload = multer({ storage: storage })
 
 
 io.on("connection", socket => {
